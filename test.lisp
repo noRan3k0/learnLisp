@@ -1,6 +1,17 @@
-(print (- 5 3))
-(print (sin 30))    ; sinの表記例。
-(print (+ (* 3 (sin 30)) 1)) ;3sinx + 1
+;; '()はリスト。
 
-;; 階乗
-(print (expt 2 3)) ; 2の3乗の計算
+;; 関数firstは、リストの先頭のみを返す。
+(print (first '(a1 b2 c3)))
+;; 空のリストに使ったら、nilを返す。
+(print (first '()))
+
+;; restで、リストの先頭要素以外を,リストとして返す。
+(print (rest '(a1 b2 c3)))
+;; 空のリストに使ったら、nilを返す。
+(print (rest '()))
+(print (rest nil))
+(print (rest ()))
+
+;; これらの組み合わせで、リスト内の対象要素にアクセス。
+(print (first (rest '(a1 b2 c3))))          ; b2にアクセス
+(print (first (rest (rest '(a1 b2 c3)))))   ; c3にアクセス
