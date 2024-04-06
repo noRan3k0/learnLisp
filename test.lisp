@@ -1,6 +1,6 @@
-(let
-    ((firstNum 1)
-    (secondNum 2))                  ; (())は変数宣言、letを囲む()の間だけで有効。                 
-    (print (+ firstNum secondNum))  ; 表示
-    (setf firstNum (+ firstNum secondNum))      ; 変数の値の更新
-    (print (+ firstNum secondNum)))  ; 表示
+(print (- 5 3))
+(print (sin 30))    ; sinの表記例。
+(print (+ (* 3 (sin 30)) 1)) ;3sinx + 1
+
+;; 階乗
+(print (expt 2 3)) ; 2の3乗の計算
