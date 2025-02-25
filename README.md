@@ -38,3 +38,25 @@ $ chmod 755 ./hello.fasl
 $ ./hello.fasl
 Hello world!
 ```
+
+## 実行ファイル
+
+```bash
+$ sbcl --noinform --no-sysinit --no-userinit --load hello.lisp
+$ ./hello
+hello world!
+```
+
+## コメントアウト
+
+- １行コメント
+  - `;`から行末
+- 複数行コメント
+  - `#|`から`|#`まで
+
+## S式
+
+>(write-line "ABC")     ; 式
+>'(1 2 3)               ; リスト、シングルクウォーテーション
+>"ABC"                  ; 文字列
+>12.3                   ; 数値
