@@ -1,0 +1,38 @@
+noran3k0@H-T-laptop:~/lisp_dir/learnLisp/culclator$ sbcl --noinform --no-sysinit --no-userinit --load culclator.lisp
+
+; file: /home/noran3k0/lisp_dir/learnLisp/culclator/culclator.lisp
+; in: DEFUN MAIN
+;     (ADD EXP1 EXP2)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::EXP1
+
+;     (TYPEP EXP1 'INTEGER)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::EXP1
+
+;     (SETQ EXP1 (READ *STANDARD-INPUT*))
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::EXP1
+
+;     (ADD EXP1 EXP2)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::EXP2
+
+;     (TYPEP EXP2 'INTEGER)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::EXP2
+
+;     (SETQ EXP2 (READ *STANDARD-INPUT*))
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::EXP2
+; 
+; compilation unit finished
+;   Undefined variables:
+;     EXP1 EXP2
+;   caught 6 WARNING conditions
