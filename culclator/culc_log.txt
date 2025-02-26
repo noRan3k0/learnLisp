@@ -1,0 +1,35 @@
+noran3k0@H-T-laptop:~/lisp_dir/learnLisp/culclator$ sbcl --noinform --no-sysinit --no-userinit --load culclator.lisp
+
+; file: /home/noran3k0/lisp_dir/learnLisp/culclator/culclator.lisp
+; in: DEFUN MAIN
+;     (AS "0")
+; 
+; caught STYLE-WARNING:
+;   The variable AS is defined but never used.
+
+; file: /home/noran3k0/lisp_dir/learnLisp/culclator/culclator.lisp
+; in: DEFUN MAIN
+;     (CASE A_S
+;       (1 (PRINC (ADD EXP1 EXP2)))
+;       (2 (PRINC (SUB EXP1 EXP2)))
+;       (3 (PRINC (MUL EXP1 EXP2)))
+;       (4 (PRINC (DIV EXP1 EXP2)))
+;       (OTHERWISE (FORMAT T "Woops. You got an error.~%")))
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::A_S
+
+;     (FIND A_S '(1 2 3 4))
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::A_S
+
+;     (SETQ A_S (READ *STANDARD-INPUT*))
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::A_S
+; 
+; compilation unit finished
+;   Undefined variable:
+;     A_S
+;   caught 3 WARNING conditions

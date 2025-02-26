@@ -17,7 +17,7 @@
     or
     数値を入力してください
 
-式全体の記述
+式全体の記述、なくてもいい
 答え
 |#
 
@@ -25,58 +25,61 @@
     ; 関数群
         ;; 加算
     (defun add (x y)
-        (+ x y)
-        )
+        (+ x y))
 
     ;; 減算
     (defun sub (x y)
-        (- x y)
-        )
+        (- x y))
 
     ;; 乗算
     (defun mul (x y)
-        (* x y)
-        )
+        (* x y))
 
     ;; 除算
     (defun div (x y)
-        (/ x y)
-        )
-
-    (let ((exp1 0)
-        (exp2 0))
+        (/ x y))
 
     ; 実際の処理
-    (Write-line "This is a culclator.")
-    (terpri)
-    
-    (loop
-        (Write-line "Enter the first argument in integer: ")
-        (setq exp1 (read *standard-input*))
-        (if (typep exp1 'integer)
-            ;(return exp1)
-            (return)
-            (Write-line "this is not integer.")
-        )
-    )
-    
-;    ("Choose the arithmetic symbol from the following 1-4")(terpri)
-    
-    (loop
-        (Write-line "Enter the second argument in integer: ")
+    (let 
+        ((exp1 0)
+        (exp2 0)
+        (a_s 0))
 
-        (setq exp2 (read *standard-input*))
-        (if (typep exp2 'integer)
-            ;(return exp2)
-            (return)
-            (Write-line "this is not integer.")
+        (format t "This is a culclator.~%")
+        
+        (loop
+            (format t "Enter the first argument in integer: ~%")
+            (setq exp1 (read *standard-input*))
+            (if (typep exp1 'integer)
+                (return)
+                (format t "this is not an integer.~%")))
+        
+        (loop
+            (format t "Choose the arithmetic symbol from the following 1-4. (1:addition 2:subtraction 3:multiplication 4:division)~%")
+            (setq a_s (read *standard-input*))
+            (if (find a_s '(1 2 3 4))
+                (return)
+                (format t "this is not an option.~%"))
         )
-    )
+        
+        (loop
+            (format t "Enter the second argument in integer: ~%")
+            (setq exp2 (read *standard-input*))
+            (if (typep exp2 'integer)
+                (return)
+                (format t "this is not an integer.~%")))
 
-    (Write-line "RESULT: ")
-    (princ(add exp1 exp2))
-    (terpri)
-    ))
+        (format t "RESULT: ~%")
+        (case a_s
+            (1 (format t "~d" (add exp1 exp2))
+                (format t "~%"))
+            (2 (format t "~d" (sub exp1 exp2))
+                (format t "~%"))
+            (3 (format t "~d" (mul exp1 exp2))
+                (format t "~%"))
+            (4 (format t "~f" (div exp1 exp2))
+                (format t "~%"))
+            (otherwise (format t "Woops. You got an error.~%")))))
 
 (sb-ext:save-lisp-and-die "culc"
                             :toplevel #'main
