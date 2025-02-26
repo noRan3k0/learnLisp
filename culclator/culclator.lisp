@@ -43,8 +43,8 @@
         (/ x y)
         )
 
-    ;(defparameter exp1 0)
-    ;(defparameter exp2 0)
+    (let ((exp1 0)
+        (exp2 0))
 
     ; 実際の処理
     (Write-line "This is a culclator.")
@@ -76,7 +76,7 @@
     (Write-line "RESULT: ")
     (princ(add exp1 exp2))
     (terpri)
-    )
+    ))
 
 (sb-ext:save-lisp-and-die "culc"
                             :toplevel #'main
